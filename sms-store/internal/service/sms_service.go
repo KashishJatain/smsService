@@ -53,7 +53,6 @@ func (s *SmsService) GetHistory(ctx context.Context, userID string) ([]model.Sms
 }
 
 func parseTimestamp(raw string) (time.Time, error){
-	// Try RFC3339 / ISO-8601 (what Java's Instant.toString() produces)
 	t, err := time.Parse(time.RFC3339Nano, raw)
 	if err != nil {
 		t, err = time.Parse(time.RFC3339, raw)
